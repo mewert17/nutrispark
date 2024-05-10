@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - NutriSpark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cacaca; /* Light beige */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling for the blue bar */
+        .top-bar {
+            background-color: #0D47A1; /* Dark blue */
+            padding: 20px 40px; /* Adjust padding as needed */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styling for the NutriSpark label */
+        .nutrispark-label {
+            color: #FFFFFF; /* White */
+            font-size: 32px; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+        }
+
+        /* Styling for the navigation links */
+        .navigation-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        .navigation-links ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .navigation-links ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+            padding: 10px 20px; /* Increase padding */
+            border-radius: 20px; /* Make rounded corners */
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        .navigation-links ul li a:hover {
+            background-color: #104b8d; /* Lighter blue on hover */
+        }
+
+        /* Styling for the container */
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0D47A1; /* Dark blue */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+        }
+
+        nav ul li a:hover {
+            color: #CD853F; /* Bronze */
+        }
+
+        h1 {
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #FFFFFF; /* White */
+        }
+
+        input[type="text"] {
+            width: calc(70% - 10px);
+            padding: 8px;
+            border: 1px solid #FFFFFF; /* White */
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 20px;
+            border: none;
+            background-color: #2b87f0; /* Dark blue */
+            color: #FFFFFF; /* White */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #104b8d; /* Lighter blue on hover */
+        }
+
+        #resultContainer {
+        display: none;
+        overflow-x: auto; /* Add this line */
+    }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000000; /* White */
+            padding: 8px;
+            text-align: left;
+            color: #000000; /* White */
+        }
+
+        th {
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        #sumSection {
+            margin-top: 20px;
+        }
+
+        #sumTable th, #nutritionalInfo th {
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        #sumTable td, #nutritionalInfo td {
+            background-color: #a8c6e9; /* Lighter blue */
+        }
+
+        .container {
+            margin-bottom: 50px; /* Add margin at the bottom */
+            padding-bottom: 35px; /* Add padding at the bottom */
+        }
+
+        .container {
+            margin-top: 10px; /* Add margin at the top */
+            padding-top: 10px; /* Add padding at the top */
+        }
+
+/* New CSS styles for the sums table */
+#sumContainer {
+            margin-top: 20px;
+        }
+
+        #sumTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #sumTable th, #sumTable td {
+            border: 1px solid #000000; /* White */
+            padding: 8px;
+            text-align: left;
+            color: #000000; /* Black */
+        }
+
+        #sumTable th {
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        #sumTable td {
+            background-color: #a8c6e9; /* Lighter blue */
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Blue bar with NutriSpark label and navigation links -->
+    <div class="top-bar">
+        <div class="nutrispark-label">NutriSpark</div>
+        <div class="navigation-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="results">Results</a></li>
+                <li><a href="/recommendations">Recommendations</a></li>
+                <li><a href="login">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Results</h1>
+        <form id="queryForm">
+            <label for="query">Enter Food Item:</label>
+            <input type="text" id="query" required>
+            <button type="submit">Get Nutrition Data</button>
+        </form>
+        <div id="resultContainer" style="display: none;">
+            <!-- Inside the div with id="resultContainer" -->
+            <h2>Results</h2>
+            <button id="clearTableBtn">Clear Table</button>
+            <table id="nutritionalInfo">
+                <!-- Table headers and data will be dynamically added here -->
+            </table>
+    
+        </div>
+        <script>document.addEventListener("DOMContentLoaded", function() {
+            var storedData = localStorage.getItem("nutritionalData");
+            if (storedData) {
+                renderTable(JSON.parse(storedData));
+                document.getElementById('resultContainer').style.display = 'block';
+            }
+        });
+        
+        var previousRequests = [];
+        
+        document.getElementById('queryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var query = document.getElementById('query').value;
+            fetch("/nutrition?query=" + encodeURIComponent(query))
+            .then(response => response.json())
+            .then(data => {
+                previousRequests.unshift({ query: query, data: data });
+                renderTable(previousRequests);
+                document.getElementById('resultContainer').style.display = 'block';
+                localStorage.setItem("nutritionalData", JSON.stringify(previousRequests));
+            })
+            .catch(err => {
+                console.error('Error fetching nutrition data:', err);
+                document.getElementById('nutritionalInfo').innerHTML = "<tr><td>Error fetching nutrition data. Please try again.</td></tr>";
+                document.getElementById('resultContainer').style.display = 'block';
+            });
+        });
+        
+        document.getElementById('clearTableBtn').addEventListener('click', function() {
+            clearTable();
+            localStorage.removeItem("nutritionalData");
+        });
+        
+        function renderTable(data) {
+            var table = document.getElementById('nutritionalInfo');
+            table.innerHTML = ''; // Clear previous content
+        
+            var headerRow = table.insertRow();
+            var headers = Object.keys(data[0].data[0]);
+            headers.unshift('Query');
+            headers.forEach(header => {
+                var th = document.createElement('th');
+                th.textContent = header;
+                headerRow.appendChild(th);
+            });
+        
+            var sums = calculateNutrientSums(data);
+            var sumRow = table.insertRow(); // Add row for sums
+            sumRow.classList.add('sum-row');
+        
+            // First two cells always say 'Total'
+            var sumCell1 = sumRow.insertCell();
+            sumCell1.textContent = 'Total';
+        
+            var sumCell2 = sumRow.insertCell();
+            sumCell2.textContent = 'Total';
+        
+            headers.slice(2).forEach(header => {
+                var sum = sums[header];
+                var td = sumRow.insertCell();
+                if (!isNaN(sum)) {
+                    td.textContent = sum.toFixed(2);
+                } else {
+                    td.textContent = '-';
+                }
+            });
+        
+            data.forEach(request => {
+                request.data.forEach(item => {
+                    var dataRow = table.insertRow();
+                    var queryCell = dataRow.insertCell();
+                    queryCell.textContent = request.query;
+                    for (var key in item) {
+                        var td = dataRow.insertCell();
+                        td.textContent = item[key];
+                    }
+                });
+            });
+        }
+        
+        function calculateNutrientSums(data) {
+            var sums = {};
+            data.forEach(request => {
+                request.data.forEach(item => {
+                    for (var key in item) {
+                        if (key !== 'Query') {
+                            sums[key] = (sums[key] || 0) + (isNaN(parseFloat(item[key])) ? 0 : parseFloat(item[key]));
+                        }
+                    }
+                });
+            });
+            return sums;
+        }
+        
+        function clearTable() {
+            var table = document.getElementById('nutritionalInfo');
+            table.innerHTML = '';
+            document.getElementById('resultContainer').style.display = 'none';
+        }
+        
+
+        </script>
+</body>
+</html>

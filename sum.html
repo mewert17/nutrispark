@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSpark - Sum of Each Column</title>
+    <style>
+        /* Add your CSS styles for the sum table here */
+        /* Same CSS styles as in the original index.html */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sum of Each Column</h2>
+        <table id="sumTable">
+            <!-- Table headers and sum data will be dynamically added here -->
+        </table>
+    </div>
+    <script>
+        // JavaScript code for rendering the sum table
+        // Same JavaScript code as in the original index.html
+        function renderSum(data) {
+            var sumTable = document.getElementById('sumTable');
+            sumTable.innerHTML = ''; // Clear previous content
+
+            // Calculate sum of each column
+            var sums = {};
+            data.forEach(request => {
+                request.forEach(item => {
+                    for (var key in item) {
+                        sums[key] = (sums[key] || 0) + parseFloat(item[key]);
+                    }
+                });
+            });
+
+            // Add table headers
+            var headerRow = sumTable.insertRow();
+            for (var key in sums) {
+                var th = document.createElement('th');
+                th.textContent = key;
+                headerRow.appendChild(th);
+            }
+
+            // Add sum data
+            var sumRow = sumTable.insertRow();
+            for (var key in sums) {
+                var td = document.createElement('td');
+                var roundedValue = parseFloat(sums[key]).toFixed(3); // Round to the thousandth place
+                td.textContent = roundedValue;
+                sumRow.appendChild(td);
+            }
+        }
+    </script>
+</body>
+</html>

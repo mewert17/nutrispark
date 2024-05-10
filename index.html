@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSpark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cacaca; /* Light beige */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling for the blue bar */
+        .top-bar {
+            background-color: #0D47A1; /* Dark blue */
+            padding: 20px 40px; /* Adjust padding as needed */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styling for the NutriSpark label */
+        .nutrispark-label {
+            color: #FFFFFF; /* White */
+            font-size: 32px; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+        }
+
+        /* Styling for the navigation links */
+        .navigation-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        .navigation-links ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .navigation-links ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+            padding: 10px 20px; /* Increase padding */
+            border-radius: 20px; /* Make rounded corners */
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        .navigation-links ul li a:hover {
+            background-color: #104b8d; /* Lighter blue on hover */
+        }
+
+        /* Styling for the container */
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #104b8d; /* Earth brown */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, p {
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px; /* Increase font size */
+            line-height: 1.6; /* Increase line height for better readability */
+            margin-top: 20px; /* Add some space at the top */
+        }
+
+        /* Styling for the food images */
+        .food-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .food-images img {
+            max-width: 200px; /* Adjust image size as needed */
+            margin: 0 10px; /* Add margin between images */
+            border-radius: 8px; /* Add border radius */
+        }
+    </style>
+</head>
+<body>
+    <!-- Blue bar with NutriSpark label and navigation links -->
+    <div class="top-bar">
+        <div class="nutrispark-label">NutriSpark</div>
+        <div class="navigation-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="results">Results</a></li>
+                <li><a href="/recommendations">Recommendations</a></li>
+                <li><a href="login">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="container">
+        <h1>About</h1>
+        <p>
+            Welcome to NutriSpark, a project developed to simplify the process of tracking nutritional data. This user-friendly service is designed for anyone interested in understanding more about what nutrients they consume on a daily basis.
+        </p>
+        <p>
+            NutriSpark allows users to input any food item and retrieve the nutritional information from the RapidAPI Nutrition API. The nutrition facts are presented in a table format, which breaks down various macros such as calories, fats, proteins, and carbohydrates.
+        </p>
+        <p>
+            Additionally, the "About" page on NutriSpark dives into the functionalities of the service, explaining the technology behind it, its features, and its objectives. This page aims to educate people on how NutriSpark can be a helpful tool in building a healthier diet.
+        </p>
+        <p>
+            Whether your goal is to track ou macro intake, plan nutritional meals, or gain knowledge of nutritional food contents, NutriSpark is designed to support you.
+        </p>
+    </div>
+
+    <!-- Container for contact information -->
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+            We'd love to hear from you! If you have any questions, feedback, or suggestions,
+            feel free to reach out to us using the contact information provided below.
+        </p>
+        <p>
+            Email: contact@nutrispark.com
+        </p>
+        <p>
+            Phone: 1-800-NUTRI-SP
+        </p>
+    </div>
+    
+</body>
+</html>

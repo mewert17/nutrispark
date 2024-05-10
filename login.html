@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NutriSpark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cacaca; /* Light beige */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling for the blue bar */
+        .top-bar {
+            background-color: #0D47A1; /* Dark blue */
+            padding: 20px 40px; /* Adjust padding as needed */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styling for the NutriSpark label */
+        .nutrispark-label {
+            color: #FFFFFF; /* White */
+            font-size: 32px; /* Increase font size */
+            font-weight: bold; /* Make it bold */
+        }
+
+        /* Styling for the navigation links */
+        .navigation-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        .navigation-links ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .navigation-links ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+            padding: 10px 20px; /* Increase padding */
+            border-radius: 20px; /* Make rounded corners */
+            background-color: #2b87f0; /* Dark blue */
+        }
+
+        .navigation-links ul li a:hover {
+            background-color: #104b8d; /* Lighter blue on hover */
+        }
+
+        /* Styling for the container */
+        .container {
+            max-width: 500px; /* Adjust container width */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0D47A1; /* Dark blue */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+        }
+
+        nav ul li a:hover {
+            color: #CD853F; /* Bronze */
+        }
+
+        h1 {
+            color: #FFFFFF; /* White */
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #FFFFFF; /* White */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(70% - 10px); /* Adjust width */
+            padding: 8px;
+            border: 1px solid #FFFFFF; /* White */
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 8px 20px;
+            border: none;
+            background-color: #2b87f0; /* Dark blue */
+            color: #FFFFFF; /* White */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #104b8d; /* Lighter blue on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Blue bar with NutriSpark label and navigation links -->
+    <div class="top-bar">
+       <div class="nutrispark-label">NutriSpark</div>
+       <div class="navigation-links">
+           <ul>
+               <li><a href="/">Home</a></li>
+               <li><a href="login">Login</a></li>
+           </ul>
+       </div>
+   </div>
+
+   
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
